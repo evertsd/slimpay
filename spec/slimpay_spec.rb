@@ -15,7 +15,7 @@ RSpec.describe Slimpay do
     expect(Slimpay::API_HEADER).not_to be nil
     expect(Slimpay::API_HEADER).to match 'https://api.slimpay.net'
     expect(Slimpay::SANDBOX_ENDPOINT).not_to be nil
-    expect(Slimpay::SANDBOX_ENDPOINT).to eq 'https://api-sandbox.slimpay.net'
+    expect(Slimpay::SANDBOX_ENDPOINT).to eq 'https://api.preprod.slimpay.com'
   end
 
   describe '.configure' do

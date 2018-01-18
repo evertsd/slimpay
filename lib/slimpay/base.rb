@@ -6,20 +6,20 @@ module Slimpay
   #   slimpay = Slimpay::Base.new(client_id = '1234', client_secret = '987654321', creditor_reference = 'azerty')
   #   slimpay.api_methods
   #   =>
-  #     { "post_token"=>"https://api-sandbox.slimpay.net/oauth/token",
-  #       "create_orders"=>"https://api-sandbox.slimpay.net/orders",
-  #       "get_creditors"=>"https://api-sandbox.slimpay.net/creditors{?reference}",
-  #       "get_orders"=>"https://api-sandbox.slimpay.net/orders{?creditorReference,reference}",
-  #       "get_mandates"=>"https://api-sandbox.slimpay.net/mandates{?creditorReference,rum}",
-  #       "create_documents"=>"https://api-sandbox.slimpay.net/documents",
-  #       "get_documents"=>"https://api-sandbox.slimpay.net/documents{?creditorReference,entityReference,reference}",
-  #       "create_direct_debits"=>"https://api-sandbox.slimpay.net/direct-debits",
-  #       "get_direct_debits"=>"https://api-sandbox.slimpay.net/direct-debits{?id}",
-  #       "create_recurrent_direct_debits"=>"https://api-sandbox.slimpay.net/recurrent-direct-debits",
-  #       "get_recurrent_direct_debits"=>"https://api-sandbox.slimpay.net/recurrent-direct-debits{?id}",
-  #       "get_card_transactions"=>"https://api-sandbox.slimpay.net/card-transactions{?id}",
-  #       "get_card_transaction_issues"=>"https://api-sandbox.slimpay.net/card-transaction-issues{?id}",
-  #       "profile"=>"https://api-sandbox.slimpay.net/alps/v1"}
+  #     { "post_token"=>"https://api.preprod.slimpay.com/oauth/token",
+  #       "create_orders"=>"https://api.preprod.slimpay.com/orders",
+  #       "get_creditors"=>"https://api.preprod.slimpay.com/creditors{?reference}",
+  #       "get_orders"=>"https://api.preprod.slimpay.com/orders{?creditorReference,reference}",
+  #       "get_mandates"=>"https://api.preprod.slimpay.com/mandates{?creditorReference,rum}",
+  #       "create_documents"=>"https://api.preprod.slimpay.com/documents",
+  #       "get_documents"=>"https://api.preprod.slimpay.com/documents{?creditorReference,entityReference,reference}",
+  #       "create_direct_debits"=>"https://api.preprod.slimpay.com/direct-debits",
+  #       "get_direct_debits"=>"https://api.preprod.slimpay.com/direct-debits{?id}",
+  #       "create_recurrent_direct_debits"=>"https://api.preprod.slimpay.com/recurrent-direct-debits",
+  #       "get_recurrent_direct_debits"=>"https://api.preprod.slimpay.com/recurrent-direct-debits{?id}",
+  #       "get_card_transactions"=>"https://api.preprod.slimpay.com/card-transactions{?id}",
+  #       "get_card_transaction_issues"=>"https://api.preprod.slimpay.com/card-transaction-issues{?id}",
+  #       "profile"=>"https://api.preprod.slimpay.com/alps/v1"}
   #
   # ===== Arguments
   #   client_id: (String)

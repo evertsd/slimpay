@@ -3,7 +3,7 @@
 
 # Slimpay
 
-Ruby implementation of the [Slimpay Hypermedia API](https://api-sandbox.slimpay.net/docs/).
+Ruby implementation of the [Slimpay Hypermedia API](https://api.preprod.slimpay.com/docs/).
 
 Slimpay website : [slimpay.com](https://www.slimpay.com/)
 
@@ -26,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-**API Docs: https://api-sandbox.slimpay.net/docs/**
+**API Docs: https://api.preprod.slimpay.com/docs/**
 
 ### Configuration
 
@@ -46,7 +46,7 @@ end
 ### Notification and return URLs
 
 The notification URL is the point of your application where Slimpay will send a POST request with the result of the current order.
-The state of the order will be either **close.completed** or **closed.aborted.aborted_byclient** if everything worked normally, or one of those quoted in the [API Order documentation](https://api-sandbox.slimpay.net/docs/alps/v1/orders/).
+The state of the order will be either **close.completed** or **closed.aborted.aborted_byclient** if everything worked normally, or one of those quoted in the [API Order documentation](https://api.preprod.slimpay.com/docs/alps/v1/orders/).
 
 The return URL is the point of your application where your user/customer will be redirected to when he will have finish signing its mandate with Slimpay.
 
@@ -67,21 +67,21 @@ slimpay.api_methods
 Result will be a Hash:
 
 ```ruby
-{"self"=>"https://api-sandbox.slimpay.net/"
-"post_token"=>"https://api-sandbox.slimpay.net/oauth/token",
-"create_orders"=>"https://api-sandbox.slimpay.net/orders",
-"get_creditors"=>"https://api-sandbox.slimpay.net/creditors{?reference}",
-"get_orders"=>"https://api-sandbox.slimpay.net/orders{?creditorReference,reference}",
-"get_mandates"=>"https://api-sandbox.slimpay.net/mandates{?creditorReference,rum}",
-"create_documents"=>"https://api-sandbox.slimpay.net/documents",
-"get_documents"=>"https://api-sandbox.slimpay.net/documents{?creditorReference,entityReference,reference}",
-"create_direct_debits"=>"https://api-sandbox.slimpay.net/direct-debits",
-"get_direct_debits"=>"https://api-sandbox.slimpay.net/direct-debits{?id}",
-"create_recurrent_direct_debits"=>"https://api-sandbox.slimpay.net/recurrent-direct-debits",
-"get_recurrent_direct_debits"=>"https://api-sandbox.slimpay.net/recurrent-direct-debits{?id}",
-"get_card_transactions"=>"https://api-sandbox.slimpay.net/card-transactions{?id}",
-"get_card_transaction_issues"=>"https://api-sandbox.slimpay.net/card-transaction-issues{?id}",
-"profile"=>"https://api-sandbox.slimpay.net/alps/v1"}
+{"self"=>"https://api.preprod.slimpay.com/"
+"post_token"=>"https://api.preprod.slimpay.com/oauth/token",
+"create_orders"=>"https://api.preprod.slimpay.com/orders",
+"get_creditors"=>"https://api.preprod.slimpay.com/creditors{?reference}",
+"get_orders"=>"https://api.preprod.slimpay.com/orders{?creditorReference,reference}",
+"get_mandates"=>"https://api.preprod.slimpay.com/mandates{?creditorReference,rum}",
+"create_documents"=>"https://api.preprod.slimpay.com/documents",
+"get_documents"=>"https://api.preprod.slimpay.com/documents{?creditorReference,entityReference,reference}",
+"create_direct_debits"=>"https://api.preprod.slimpay.com/direct-debits",
+"get_direct_debits"=>"https://api.preprod.slimpay.com/direct-debits{?id}",
+"create_recurrent_direct_debits"=>"https://api.preprod.slimpay.com/recurrent-direct-debits",
+"get_recurrent_direct_debits"=>"https://api.preprod.slimpay.com/recurrent-direct-debits{?id}",
+"get_card_transactions"=>"https://api.preprod.slimpay.com/card-transactions{?id}",
+"get_card_transaction_issues"=>"https://api.preprod.slimpay.com/card-transaction-issues{?id}",
+"profile"=>"https://api.preprod.slimpay.com/alps/v1"}
 ```
 
 The keys of this Hash are the methods name you can call on the class instance (here Slimpay::Base).
@@ -90,7 +90,7 @@ The value is the URL that will be used, with its arguments.
 **Example:**
 
 ```ruby
-"get_orders"=>"https://api-sandbox.slimpay.net/orders{?creditorReference,reference}",
+"get_orders"=>"https://api.preprod.slimpay.com/orders{?creditorReference,reference}",
 ```
 
 The arguments will be _creditorReference_ and _reference_. You can give them as a Hash.
@@ -124,12 +124,12 @@ Result will be a Hash:
 
 ```json
 {"_links"=>
-  {"self"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/orders/1"},
-   "https://api.slimpay.net/alps#get-creditor"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor"},
-   "https://api.slimpay.net/alps#get-subscriber"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/orders/1/subscribers/subscriber01"},
+  {"self"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/orders/1"},
+   "https://api.slimpay.net/alps#get-creditor"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor"},
+   "https://api.slimpay.net/alps#get-subscriber"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/orders/1/subscribers/subscriber01"},
    "https://api.slimpay.net/alps#user-approval"=>{"href"=>"https://slimpay.net/slimpaytpe16/userApproval?accessCode=spK534N0cuZztBGwj2FjC6eKzcsKFRzXbfy8buloUHiZV6p9PhIfcPgV7c507R"},
-   "https://api.slimpay.net/alps#get-order-items"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/orders/1/items"},
-   "https://api.slimpay.net/alps#get-mandate"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/mandates/1"}},
+   "https://api.slimpay.net/alps#get-order-items"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/orders/1/items"},
+   "https://api.slimpay.net/alps#get-mandate"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/mandates/1"}},
  "reference"=>"1",
  "state"=>"closed.completed",
  "started"=>true,

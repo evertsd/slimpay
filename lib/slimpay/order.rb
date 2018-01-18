@@ -10,14 +10,14 @@ module Slimpay
     #   orders.get_one
     #   =>
     #     {"_links"=>
-    #       {"self"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/orders/1"},
-    #        "https://api.slimpay.net/alps#get-creditor"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor"},
+    #       {"self"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/orders/1"},
+    #        "https://api.slimpay.net/alps#get-creditor"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor"},
     #        "https://api.slimpay.net/alps#get-subscriber" =>
-    #           {"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/orders/1/subscribers/subscriber01"},
+    #           {"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/orders/1/subscribers/subscriber01"},
     #        "https://api.slimpay.net/alps#user-approval" =>
     #           {"href"=>"https://slimpay.net/slimpaytpe16/userApproval?accessCode=spK534N0cuZztBGwj2FjC6eKzcsKFRzXbfy8buloUHiZV6p9PhIfcPgV7c507R"},
-    #        "https://api.slimpay.net/alps#get-order-items"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/orders/1/items"},
-    #        "https://api.slimpay.net/alps#get-mandate"=>{"href"=>"https://api-sandbox.slimpay.net/creditors/democreditor/mandates/1"}},
+    #        "https://api.slimpay.net/alps#get-order-items"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/orders/1/items"},
+    #        "https://api.slimpay.net/alps#get-mandate"=>{"href"=>"https://api.preprod.slimpay.com/creditors/democreditor/mandates/1"}},
     #      "reference"=>"1",
     #      "state"=>"closed.completed",
     #      "started"=>true,
