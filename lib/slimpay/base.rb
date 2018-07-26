@@ -37,7 +37,7 @@ module Slimpay
     # It will also create new methods from future answers.
     def generate_api_methods(raw_response)
       methods = {}
-      response = raw_response.is_a?(Hash) ? raw_response : JSON.parse(raw_response)
+      response = raw_response.is_a?(String) ? JSON.parse(raw_response) : raw_response
       links = response['_links']
       links = links.merge(response['_embedded']['items'].first['_links']) if response['_embedded'] && response['_embedded']['items']
       return if links.nil?
