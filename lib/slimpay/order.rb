@@ -79,7 +79,7 @@ module Slimpay
         started: true
       }
       response = HTTParty.post("#{@endpoint}/#{url}", body: body_options.to_json, headers: options)
-      JSON.parse(follow_up_api(response))
+      follow_up_api(response)
     end
 
     private

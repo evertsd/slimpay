@@ -29,15 +29,15 @@ module Slimpay
     def initialize
       init_config
       connect_api_with_oauth
-      api_response = JSON.parse(request_to_api)
-      generate_api_methods(api_response)
+      generate_api_methods(request_to_api)
     end
 
     # Root endpoint provides GET links to resources.
     # This methods create a method for each resources.
     # It will also create new methods from future answers.
-    def generate_api_methods(response)
+    def generate_api_methods(raw_response)
       methods = {}
+      response = raw_response.is_a?(Hash) ? raw_response : JSON.parse(raw_response)
       links = response['_links']
       links = links.merge(response['_embedded']['items'].first['_links']) if response['_embedded'] && response['_embedded']['items']
       return if links.nil?
@@ -69,6 +69,7 @@ module Slimpay
     # An empty call will return list of available methods in the API.
     def request_to_api(url = '')
       response = HTTParty.get("#{@endpoint}/#{url}", headers: options)
+
       Slimpay.answer response
     end
 
@@ -152,7 +153,7 @@ module Slimpay
     # Catch up potential errors and generate new methods if needed.
     def follow_up_api(response)
       answer = Slimpay.answer(response)
-      generate_api_methods(JSON.parse(response))
+      generate_api_methods(response)
       answer
     end
 
